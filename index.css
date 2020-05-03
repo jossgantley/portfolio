@@ -63,7 +63,7 @@
 }
 
 #play {
-    padding: none;
+    padding: 10vw 0;
     font-size: 30vw;
     line-height: 30vw;
     color: rgba(255,255,255,0.6);
@@ -397,6 +397,7 @@ background-color:  rgb(16, 73, 90);
     color:blueviolet
 }
 @media screen and (max-width: 768px){
+   
     #main-heading{
         width: 90%;
     }
@@ -415,6 +416,9 @@ background-color:  rgb(16, 73, 90);
     .view-button {
         max-width: 175px;
         min-height: 80px;
+        margin-bottom: 30vw;
+        border-radius: 10px;
+        
         
         
     }
