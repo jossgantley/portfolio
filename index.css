@@ -100,6 +100,7 @@ background-color:  rgb(16, 73, 90);
 
 .appear {
     animation: appear 4s forwards;
+   
 }
 @keyframes appear{
     0%{
@@ -451,19 +452,26 @@ background-color:  rgb(16, 73, 90);
     .page {
         width: 2vw;
     }
+  
     #right-button {
     padding: none;
     background-color: rgba(0,0,0,0); 
     
-    margin-left: -1vw;
+    margin-left: -30vw;
     margin-right: -1vw;
+    z-index: 99;
 
     }
+    .arrow-right, .arrow-left{
+        color: rgba(11, 26, 95, 0.8);
+    }
     #left-button {
-        margin-right: -1vw;
+        margin-right: -30vw;
         margin-left: -1vw;
         background-color: rgba(0,0,0,0);
         padding: none;
+        z-index:99;
+       
     }
   
 
