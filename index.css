@@ -1,0 +1,475 @@
+
+#body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    margin: 0;
+    overflow: scroll;
+}
+.hide{
+    opacity: 0;
+}
+
+.display-none{
+    display: none;
+}
+#navbar {
+    position: fixed;
+    height: 60px;
+    background-color:rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#navbar li {
+    list-style: none;
+    float: right;
+    margin-right: 40px;
+}
+#navbar li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: lightgray;
+    font-weight: 600;
+    
+    font-size: 30px;
+}
+#navbar li a:hover{
+    color: white;
+}
+#welcome-section{
+    height: 100vh;
+    background-image: url("welcome.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-end;
+ 
+
+}
+#play-button{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    justify-self: center;
+    padding: none;
+    position: absolute;
+    left: 35vw;
+    top:calc(50vh - 35vw/2);
+}
+
+#play {
+    padding: none;
+    font-size: 30vw;
+    line-height: 30vw;
+    color: rgba(255,255,255,0.6);
+    
+}
+#main-heading {
+    flex: 1 1 60%;
+    min-width:85%;
+    
+    
+    margin: 50px 50px;
+    background-color: rgba(0,0,0,0);
+    z-index: 2;
+    border-radius: 20px;
+}
+.view-button{
+    flex: 1 1 50%;
+    max-width: 250px;
+    padding-bottom: 40px;
+    padding-top: 5px;
+    border: none;
+    color: white;
+    text-align: center;
+    background-color: rgba(16, 33, 90, 1);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    min-height: 100px;
+    margin-bottom: 0;
+}
+.view-button:hover{
+background-color:  rgb(16, 73, 90);
+
+}
+
+.appear {
+    animation: appear 4s forwards;
+}
+@keyframes appear{
+    0%{
+        display: block;
+        opacity: 0;
+
+    }
+    100%{
+        display: block;
+        opacity: 1;
+    }
+}
+.arrow {
+    font-size: 50px;
+    color: white;
+    
+    margin: auto;
+    padding: 0;
+    
+    
+}
+#real-chevron {
+    margin-top: 10px;
+}
+#left-bar, #right-bar{
+    width: 50px;
+    height: 5px;
+    background-color: white;
+    margin: auto;
+    
+}
+#right-bar{
+    transform: translate(25px, -5px);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#left-bar {
+    transform: translate(-25px);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.transform-right{
+    animation: transformRight 4s forwards;
+}
+@keyframes transformRight {
+    0%{
+        transform: translate(25px, -5px);
+    }
+    90%{
+        transform: translate(25px, 7.5px) rotate(-30deg)
+    }
+    100%{
+        transform: translate(25px, 7.5px) rotate(-30deg);
+        width: 61px;
+    }
+}
+.transform-left{
+    animation: transformLeft 4s forwards;
+}
+@keyframes transformLeft {
+    0%{
+        transform: translate(-25px);
+
+    }
+    90%{
+        transform: translate(-25px, 12.5px) rotate(30deg);
+    }
+    100%{
+        width: 61px;
+        transform: translate(-25px, 12.5px) rotate(30deg);
+    }
+}
+#view-heading{
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    font-size: 30px;
+    text-transform: capitalize;
+    
+}
+
+.animate-page {
+    animation: animatePage 1.5s linear;
+
+}
+@keyframes animatePage{
+    
+  
+    
+    50%{
+        transform: translate(8%, -25%) skew(-30deg) scaleY(0.5);
+        
+        
+        
+    }
+    100%{
+        transform: translate(17%,-63%) skew(-70deg) scaleY(0.25);
+    }                           
+}
+.animate-next-page {
+    animation: animateNextPage 1.5s linear;
+
+}
+@keyframes animateNextPage{
+    
+  0%{
+      
+      transform: translate(4.1%, -37.5%) skew(30deg) scaleY(.25);
+  }
+    
+    50%{
+        transform: translate(9%, -72%) skew(30deg) scaleY(.56);
+        
+        
+        
+    }     
+    100%{
+        transform: translate(0, -100%) skew(0) scaleY(1);
+    }                      
+}
+#projects{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    background-image:linear-gradient( lightblue, white);
+}
+#project-tile{
+    width:"100%";
+    display: flex;
+    justify-content: center;
+    height: 40vw;
+    margin-bottom: 40px;
+}
+#current-project-tile{
+    width: 60vw;
+    height: 40vw;
+    border: none;
+    text-decoration: none;
+    border: 5px solid darkslategray;
+    border-radius: 16px;
+    
+
+    
+}
+#project-image{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    margin-bottom: -16%;
+    border:none;
+    
+    padding: none;
+    
+    position: relative;
+    border-radius: 10px;
+}
+#project-desc{
+    width: 60vw;
+    height: 7.65vw;
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.9);
+    margin: none;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: none;
+    z-index: 2;
+    position: relative;
+    
+}
+#desc-heading {
+    vertical-align: middle;
+    font-size: 2vw;
+    text-decoration: none;
+    padding: none;
+    margin: none;
+    padding-top: 4%;
+}
+#projects-header{
+    position: unset;
+    text-align: center;
+    margin-top: 60px;
+    
+    
+}
+#projects-title{
+    color: darkslategray;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 40px;
+    text-shadow: 3px 3px 5px white;
+
+}
+
+.page {
+    height: 30vw;
+    width: 40px;
+    min-width: 10px;
+   
+    z-index: 4;
+}
+.one, .six {
+    background-color: gray;
+    position: relative;
+    align-self: center;
+    height: 80%;
+    width: 30px;
+
+    
+}
+.two, .five {
+    background-color: darkgray;
+    position: relative;
+    align-self: center;
+    height: 90%
+}
+.three, .four {
+    position: relative;
+    background-color: lightgray;
+    height: 95%;
+    align-self: center;
+}
+.four, .five, .six {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.one, .two, .three {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#left-button, #right-button {
+    min-height: 80px;
+    min-width: 80px;
+    background-color: darkslategray;
+    border-radius: 30px;
+    border: none;
+}
+#left-button:disabled, #right-button:disabled{
+ opacity: 0.6;
+}
+#left-button {
+    margin-right: 20px;
+    align-self: center;
+    margin-left: 20px;
+    
+}
+#right-button {
+    margin-left: 20px;
+    align-self: center;
+    margin-right: 20px;
+   
+}
+.arrow-left, .arrow-right {
+    font-size: 80px;
+    color: lightgray;
+    font-weight: 600;
+}
+#contact{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(white, aquamarine);
+    
+    justify-content: center;
+    align-items: center;
+}
+#contact-header {
+    font-size: 7vw;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-shadow: 3px 3px 5px white;
+    color: darkslategray;
+    
+
+}
+#contact-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.social{
+    font-size: 10vw;
+    color: rgb(75, 16, 131)
+}
+.social:hover{
+    transform: translate(0,1vw);
+    transition-duration: 1s;
+    color:blueviolet
+}
+@media screen and (max-width: 768px){
+    #main-heading{
+        width: 90%;
+    }
+    #navbar li a {
+        font-size: 3.5vw;
+    }
+    #play-button{
+        left: 25vw;
+    }
+    #play {
+        font-size: 50vw;
+    }
+    #view-heading{
+        font-size: 20px;
+    }
+    .view-button {
+        max-width: 175px;
+        min-height: 80px;
+        
+        
+    }
+    #projects {
+        justify-content: flex-start;
+    }
+    #project-tile{
+        width: 100%;
+        height: 70vh;
+        justify-self: self-end;
+    }
+    #project-header{
+        margin-top: 40px;
+        
+    }
+    #current-project-tile {
+        width: 70%;
+        height: 100%;
+        border: 5px solid darkslategray;
+        margin-top: 0;
+    }
+    #project-image{
+        margin-bottom: unset;
+    }
+    #project-desc {
+        height:12%;
+        width: 100%;
+        margin-top: -10.5vh;   
+      
+        
+    }
+    #desc-heading{
+        font-size: 2vh;
+    }
+    .page {
+        width: 2vw;
+    }
+    #right-button {
+    padding: none;
+    background-color: rgba(0,0,0,0); 
+    
+    margin-left: -1vw;
+    margin-right: -1vw;
+
+    }
+    #left-button {
+        margin-right: -1vw;
+        margin-left: -1vw;
+        background-color: rgba(0,0,0,0);
+        padding: none;
+    }
+  
+
+
+    #contact {
+        height: 50vh;
+    }
+}
+

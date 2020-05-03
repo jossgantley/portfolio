@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/18a57a0e15.js" crossorigin="anonymous"></script>
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <title>Joss Gantley Developer Portfolio</title>
+    </head>
+    <body id="body">
+        
+        <nav id="navbar" class="display-none">
+            <ul>
+                <li><a href="#contact">Contact</a></li>
+                
+                <li><a href="#projects">My Work</a></li>
+                <li><a href="#welcome-section">About</a></li>
+            </ul>
+
+        </nav>
+        <section id="welcome-section" >
+            <div id="press-play">
+                <button onclick="changeHeading()" id="play-button" ><i id ="play" class="far fa-play-circle"></i></button>
+            </div>
+            <header id="main-heading">
+                <h1 id="main-heading-text"></h1>
+                
+            </header>
+            <audio id="audio">
+                <source src="type.mp3" type="audio/mpeg">
+            </audio>
+            
+            <button disabled onclick="viewWork()"id="view" class=" hide view-button">
+                <h2 id="view-heading">View my work</h2>
+                
+                <div id="real-chevron">
+                    <div id="left-bar"></div>
+                    <div id="right-bar"></div>
+                </div>
+            </button>
+            
+        </section >
+    
+        <section id="projects">
+            <header id="projects-header">
+                <h2 id= "projects-title">My Projects</h2>
+            </header>
+            <div class="project-tile" id="project-tile">
+                <button disabled onclick="changeWebsite(this)" id="left-button"><i class="arrow-left fas fa-chevron-left"></i></button>
+                <div id="first" class="page one hide"></div>
+                <div id="second" class="page two hide"></div>
+                <div id="third" class="page three hide"></div>
+                <a id="current-project-tile" href="#">
+                   <img id="project-image" src="" >
+                        
+                        <div id="project-desc">
+                        <h2 id="desc-heading"></h2>
+                    </div>
+                
+                    
+                </a>
+                
+                <div id="fourth" class="page four"></div>
+                <div id="fifth" class="page five"></div>
+                <div id="sixth" class="page six"></div>
+                <button onclick="changeWebsite(this)"id="right-button"><i class="arrow-right fas fa-chevron-right"></i></button>
+            </div>
+        </section >
+
+       
+
+        <section id="contact">
+            <div id="contact-info">
+                <h2 id="contact-header">
+                    Want to get in touch?
+                </h2>
+                <div id="contact-buttons">
+                    <a  href="https://www.messenger.com/t/100011762307715" target="_blank"><i class="social fab fa-facebook-messenger "></i></a>
+                    <a href="https://www.linkedin.com/in/joss-gantley-10aa881a8/" target="_blank"><i class="social fab fa-linkedin "></i></a>
+                    <a id="profile-link"href="https://github.com/josscg449" target="_blank"><i class="social fab fa-github "></i></a>
+                    <a href="mailto:josscg449@gmail.com" target="_blank"><i class="social fas fa-at "></i></a>
+
+                </div>
+            </div>
+
+        </section>
+       
+        <script>
+            var heading = document.getElementById("main-heading");
+             const leftButton= document.getElementById("left-button");
+             const rightButton= document.getElementById("right-button");
+             var link = document.getElementById("current-project-tile")
+             var image = document.getElementById("project-image")
+             var imgTitle = document.getElementById("desc-heading");
+             var count = 0;
+             const first=document.getElementById("first");
+             const second=document.getElementById("second");
+             const third=document.getElementById("third");
+             const fourth=document.getElementById("fourth");
+             const fifth=document.getElementById("fifth");
+             const sixth=document.getElementById("sixth");
+            const websitesArray=[
+                ["CSS Flex Box Documentation Page", "flexbox.jpeg", "https://allaboutkeys.net/CSSflexbox/", "mflexbox.jpeg"],
+                ["CT Music Product Landing Page", "CTmusic.jpeg", "https://allaboutkeys.net/CTmusic/", "mCTmusic.jpeg"],
+                ["Employer Survey Page", "survey.jpeg", "https://allaboutkeys.net/surveyforprospectiveemployers/", "msurvey.jpeg"],
+                ["Steve Jobs Tribute Page", "tribute.jpeg", "https://allaboutkeys.net/stevejobstributepage/", "mtribute.jpeg"],
+                ["Jager Mojito Recipe Page", "mojito.jpeg", "https://allaboutkeys.net/jagermojitorecipe/", "mmojito.jpeg"],
+                ["All About Keys", "allaboutkeys.jpeg", "https://allaboutkeys.net/", "mallaboutkeys.jpeg"]
+            ]
+          
+            function changeWebsite(event){
+               
+                if (this.event.currentTarget.id==="right-button"){
+                    count+=1;
+                    count=== websitesArray.length-1 ? (
+                        rightButton.disabled = true
+                    ):(
+                        rightButton.disabled= false
+                    )
+                    count > 0 ? (
+                        leftButton.disabled=false
+                    ) : (
+                        leftButton.disabled=true
+                        )
+                } else if (this.event.currentTarget.id==="left-button"){
+                    count-=1;
+                    count > 0 ? (
+                        leftButton.disabled=false
+                    ) : (
+                        leftButton.disabled=true
+                        )
+                    count < websitesArray.length-1 ? (
+                        rightButton.disabled=false
+                    ) : (
+                        rightButton.disabled=true
+                    )
+
+                }
+                switch(true){
+                    
+                    case (count===0) :
+                    third.classList.add("hide");
+                    break;
+                    case (count===1) :
+                    third.classList.remove("hide");
+                    second.classList.add("hide")
+                    break;
+                    case (count===2) :
+                    second.classList.remove("hide");
+                    first.classList.add("hide")
+                    break;
+                    case (count===3) :
+                    first.classList.remove("hide");
+                    break;
+                    
+                }
+                switch (true){
+                    case (count===websitesArray.length-4) :
+                    sixth.classList.remove("hide");
+                    break;
+                    case (count===websitesArray.length-3) :
+                    sixth.classList.add("hide");
+                    fifth.classList.remove("hide")
+                    break;
+                    case (count===websitesArray.length-2) :
+                    fifth.classList.add("hide");
+                    fourth.classList.remove("hide")
+                    break;
+                    case (count===websitesArray.length-1) :
+                    fourth.classList.add("hide");
+                    break;
+                    }
+                imgTitle.innerText=websitesArray[count][0];
+                image.setAttribute("src", websitesArray[count][window.innerWidth>768 ? 1 : 3]);
+                link.setAttribute("href", websitesArray[count][2]);
+                
+               
+            }
+         
+
+            const body = document.getElementById("body");
+            
+            function viewWork(){
+                
+                document.getElementById("welcome-section").classList.add("animate-page");
+                document.getElementById("projects").classList.add("animate-next-page");     
+                document.getElementById("view").classList.remove("appear");
+                
+
+                setTimeout(()=>{
+                    window.scrollTo(0, window.innerHeight)
+                    document.getElementById("navbar").classList.remove("display-none");
+                    body.style.overflow = "scroll";
+                   
+                }, 1450)
+            }
+            const audio=document.getElementById("audio");
+            function changeFontSize (){
+               
+
+                window.innerWidth > 768 ? 
+
+                            heading.style.fontSize = "40px"
+                            :
+                            heading.style.fontSize = "25px"
+            }
+            
+            function changeHeading(){
+                
+                let textArray=[];
+                let string = "Hi there, my name is Joss. I am a web developer.";
+                let sampleArray= string.split("");
+               
+                
+                audio.play();
+                document.getElementById("play-button").classList.add("display-none");
+                
+                for (i=0; i<sampleArray.length; i++){
+                    (i => {
+                        setTimeout(()=>{
+                            
+                            textArray.push(sampleArray[i])
+                            heading.innerText=textArray.join("");
+                            heading.style.fontSize= "4.7vw";
+                            heading.style.textAlign= "center";
+                            window.innerWidth > 768 ? 
+                            (heading.style.fontSize = "40px")
+                            :
+                            (heading.style.fontSize = "25px")
+                            heading.style.padding="40px";
+                            heading.style.fontWeight="600";
+                           
+                            heading.style.color="white";
+                            heading.style.textShadow="5px 5px 10px black";
+                            
+                        }, 125 *(i+1) ) 
+                    })(i);
+                
+                }
+               
+                imgTitle.innerText=websitesArray[0][0];
+                image.setAttribute("src", websitesArray[0][window.innerWidth>768 ? 1 : 3]);
+                link.setAttribute("href", websitesArray[0][2]);
+                setTimeout(()=>{audio.pause(), document.getElementById("view").classList.add("appear")}, 6000)
+                setTimeout(()=>{document.getElementById("view").disabled=false}, 7000)
+                setTimeout(()=>{document.getElementById("left-bar").classList.add("transform-left"),
+                document.getElementById("right-bar").classList.add("transform-right")}, 7500);
+            
+          
+            }
+            function checkHeading() {
+                
+                setTimeout(()=>{
+                if (window.scrollY==0){
+                body.style.overflow="hidden"
+                    console.log(window.scrollY)
+                } else {
+                    console.log(body.scrollTop);
+                    document.getElementById("play-button").classList.add("display-none");
+                    body.style.overflow=" auto"
+                    imgTitle.innerText=websitesArray[0][0];
+                image.setAttribute("src", websitesArray[0][window.innerWidth>768 ? 1 : 3]);
+                link.setAttribute("href", websitesArray[0][2]);
+                navbar.classList.remove("display-none")
+                heading.innerText="Hi there, my name is Joss. I am a web developer.";
+                heading.style.fontSize= "4.7vw";
+                heading.style.textAlign= "center";
+                window.innerWidth > 768 ? 
+                (heading.style.fontSize = "40px")
+                            :
+                (heading.style.fontSize = "25px")
+                heading.style.padding="40px";
+                heading.style.fontWeight="600";
+                           
+                heading.style.color="white";
+                heading.style.textShadow="5px 5px 10px black";
+                            
+                }
+                }, 200 )
+                
+            }
+            window.onresize = ()=>{
+                changeFontSize();
+                image.setAttribute("src", websitesArray[count][window.innerWidth>768 ? 1 : 3]);
+            }
+           window.onbeforeunload=checkHeading();
+                
+           
+        </script>
+    </body>
+</html>
