@@ -145,7 +145,7 @@ background-color:  rgb(16, 73, 90);
     border-bottom-left-radius: 3px;
 }
 .transform-right{
-    animation: transformRight 4s linear forwards;
+    animation: transformRight 2s linear forwards;
 }
 @keyframes transformRight {
     0%{
@@ -160,7 +160,7 @@ background-color:  rgb(16, 73, 90);
     }
 }
 .transform-left{
-    animation: transformLeft 4s linear forwards;
+    animation: transformLeft 2s linear forwards;
 }
 @keyframes transformLeft {
     0%{
